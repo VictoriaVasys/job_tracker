@@ -2,8 +2,11 @@
 
 <% @companies.each do |company| %>
   <div class=company_<%= company.id %>>
-    <%= link_to company.name, company_path(company) %><br>
+    <b><%= link_to company.name, company_path(company) %></b><br>
     <%= link_to "Edit", edit_company_path(company) %>
     <%= link_to "Delete", company_path(company), method: "delete" %>
   </div>
 <% end %>
+<br>
+<br>
+<%= link_to "Create a new company", new_company_path %>

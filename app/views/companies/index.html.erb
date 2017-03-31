@@ -1,12 +1,20 @@
-<h3>All Companies</h3>
+<div class="page-header">
+  <div class="btn-toolbar pull-right">
+    <%= link_to "Create a new company", new_company_path, class: "btn btn-default"%>
+  </div>
+  <h3>All Companies</h3>
+  <hr>
+</div>
 
 <% @companies.each do |company| %>
-  <div class=company_<%= company.id %>>
-    <b><%= link_to company.name, company_path(company) %></b><br>
-    <%= link_to "Edit", edit_company_path(company) %>
-    <%= link_to "Delete", company_path(company), method: "delete" %>
-  </div>
+  <ul class=company_<%= company.id %>>
+    <h4><%= link_to company.name, company_path(company) %></h4>
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+      <%= link_to "Edit", edit_company_path(company), class: "btn-sm, btn-default"%>
+      <%= link_to "Delete", company_path(company), method: "delete", class: "btn-sm btn-default" %>
+      <br><br>
+    </div>
+  </ul>
 <% end %>
-<br>
-<br>
-<%= link_to "Create a new company", new_company_path %>
+
+

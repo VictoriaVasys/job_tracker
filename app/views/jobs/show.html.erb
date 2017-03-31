@@ -1,18 +1,25 @@
-<br>
-Title: <%= @job.title %>
-<br>
+<div class='page-header'>
+  <div class='btn-toolbar pull-right'>
 
-Description: <%= @job.description %>
-<br>
+    <%= link_to "Edit", edit_company_job_path(@company, @job), class: "btn btn-default" %>
 
-Level of Interest: <%= @job.level_of_interest %>
-<br>
+    <%= link_to "Delete", company_job_path(@company, @job), method: "delete", class: "btn btn-default"%>
 
-City: <%= @job.city %>
-<br>
+  </div>
+  <h2><%= @job.title %> at <%= @company.name %></h2>
+</div>
 
-Company: <%= link_to @company.name, company_path(@company) %>
+<div class="list-group">
+  <ul class="col-md-8">
+    <li class="list-group-item"> Description: <strong> <%= @job.description %> </strong> </li>
+    <li class="list-group-item"> Level of Interest: <strong> <%= @job.level_of_interest %> </strong> </li>
+    <li class="list-group-item"> City: <strong> <%= @job.city %> </strong> </li>
+    <li class="list-group-item"> Category: <strong/> <%= link_to "#{@job.category.title}", category_path(@job.category)%></li>
+  </ul>
+</div>
 
-<%= link_to "Edit", edit_company_job_path(@company, @job) %>
-<br>
-<%= link_to "Delete", company_job_path(@company, @job), method: :delete %>
+<span class="col-md-12">
+  <div class="btn btn-default" role="button" >
+    <%= link_to "Return to jobs at #{@company.name}", company_jobs_path(@company, @jobs), class: "btn-sm, btn-default" %>
+  </div>
+</span>

@@ -1,9 +1,17 @@
-All Jobs for <strong><%= @company.name %></strong>
+<div class="page-header">
+  <div class="btn-toolbar pull-right">
+    <%= link_to "Create a new job", new_company_job_path, class: "btn btn-default" %>
+  </div>
+  <h3>Jobs for <%= @company.name %></h3>
+  <hr>
+</div>
 
 <% @jobs.each do |job| %>
-  <ul><%= link_to job.title, company_job_path(@company, job)%> at <%= job.company.name %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <%= link_to "Edit Job", edit_company_job_path(@company, job) %></ul>
+  <ul>
+    <h5><%= link_to job.title, company_job_path(@company, job)%> at <%= job.company.name %></h5>
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+      <%= link_to "Edit Job", edit_company_job_path(@company, job), class: "btn-sm, btn-default" %>
+      <br><br>
+    </div>
+  </ul>
 <% end %>
-<br>
-<br>
-
-<%= link_to "Create a new job", new_company_job_path(@company) %>

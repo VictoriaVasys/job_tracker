@@ -1,0 +1,11 @@
+<h3>All Categories</h3>
+
+<%= link_to "Create a new category", new_category_path %><br><br>
+
+<% @categories.each do |category| %>
+    <b><%= link_to category.title, category_path(category) %></b><br>
+    <%= link_to "Edit", edit_category_path(category) %>
+    <%= link_to "Delete", category_path(category), method: :delete %><br><br><br>
+<% end %>
+
+

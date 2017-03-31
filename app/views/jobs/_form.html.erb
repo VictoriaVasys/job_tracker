@@ -12,7 +12,7 @@
   <%= f.text_field :city %><br><br>
 
   <%= f.label :category_id %>
-  <%= f.collection_select :category_id, Category.all, :id, :title, :prompt => "Select Category" %>
+  <%= f.collection_select :category_id, Category.all, :id, :title, :required => true%>
   <%= link_to "or create a new category", new_category_path %><br><br>
   <%= f.submit %>
 <% end %>

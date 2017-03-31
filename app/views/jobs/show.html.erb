@@ -14,7 +14,9 @@
     <li class="list-group-item"> Description: <strong> <%= @job.description %> </strong> </li>
     <li class="list-group-item"> Level of Interest: <strong> <%= @job.level_of_interest %> </strong> </li>
     <li class="list-group-item"> City: <strong> <%= @job.city %> </strong> </li>
+    <% if @job.category %>
     <li class="list-group-item"> Category: <strong/> <%= link_to "#{@job.category.title}", category_path(@job.category)%></li>
+    <% end %>
   </ul>
 </div>
 
@@ -22,4 +24,15 @@
   <div class="btn btn-default" role="button" >
     <%= link_to "Return to jobs at #{@company.name}", company_jobs_path(@company, @jobs), class: "btn-sm, btn-default" %>
   </div>
+</span>
+
+<div class="col-md-12">
+  <h4> Comments</h4>
+  <% @comments.each do |comment| %>
+     <p class="comment"><%= comment.content %></p>
+  <% end %>
+</div class="col-md-12">
+
+<span class="col-md-12">
+  <%= render partial: "comments/form" %>
 </span>

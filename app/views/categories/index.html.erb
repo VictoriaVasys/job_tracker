@@ -1,11 +1,21 @@
-<h3>All Categories</h3>
+<div class="page-header">
+  <div class="btn-toolbar pull-right">
+    <%= link_to "Create a new category", new_category_path, class: "btn btn-default" %>
+  </div>
+  <h3>All Categories</h3>
+  <hr>
+</div>
 
-<%= link_to "Create a new category", new_category_path %><br><br>
+<ul>
+  <% @categories.each do |category| %>
+    <h4><%= link_to category.title, category_path(category) %></h4>
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+      <%= link_to "Edit", edit_category_path(category), class: "btn-sm btn-default" %>
+      <%= link_to "Delete", category_path(category), method: :delete, class: "btn-sm btn-default" %>
+      <br><br><br>
+  </div>
+  <% end %>
+</ul>
 
-<% @categories.each do |category| %>
-    <b><%= link_to category.title, category_path(category) %></b><br>
-    <%= link_to "Edit", edit_category_path(category) %>
-    <%= link_to "Delete", category_path(category), method: :delete %><br><br><br>
-<% end %>
 
 

@@ -1,6 +1,20 @@
-Jobs for <strong><%= @company.name %></strong>
+<div class="page-header">
+  <div class="btn-toolbar pull-right">
+  </div>
+  <h3>Jobs for <%= @company.name %></h3>
+  <hr>
+</div>
 
-<% @company.jobs.each do |job| %>
-  <ul><%= job.title %></ul>
+
+<% @companies.jobs.each do |job| %>
+  <ul>
+    <h4><%= job.title %></h4>
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+      <%= link_to "Edit", edit_company_job_path(job), class: "btn-sm, btn-default"%>
+      <%= link_to "Delete", company_job_path(job), method: "delete", class: "btn-sm btn-default" %>
+      <br><br>
+    </div>
+  </ul>
 <% end %>
+
 

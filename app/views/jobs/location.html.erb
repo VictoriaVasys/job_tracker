@@ -1,0 +1,19 @@
+<div class="page-header">
+  <h3>Jobs by Location</h3>
+  <hr>
+</div>
+
+<div class="col-md-8">
+  <table class="table table-striped">
+    <tr>
+      <th>City</th>
+      <th>Job</th>
+    </tr>
+    <% @jobs_by_location.each do |job| %>
+    <tr>
+      <td><%=job.city%></td>
+      <td><%=link_to "#{job.title} at #{job.company.name}", company_job_path(job.company.id, job) %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>

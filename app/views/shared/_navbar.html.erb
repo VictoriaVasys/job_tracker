@@ -3,10 +3,17 @@
     <ul class="nav navbar-nav">
     </ul>
     <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to "Dashboard", dashboard_path %>
       <li><%= link_to "Companies", companies_path %></li>
       <li><%= link_to "Categories", categories_path %></li>
       <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown">Jobs<span class="caret"></span></a>
+        <a class="dropdown-toggle" data-toggle="dropdown">Jobs
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "By Location", jobs_path(:sort => :location) %></li>
+            <li><%= link_to "By Level of Interest", jobs_path(:sort => :interest) %></li>
+            <li><%= link_to "By Company", jobs_path(:sort => :company) %></li>
+          </ul>
       </li>
     </ul>
   </div>

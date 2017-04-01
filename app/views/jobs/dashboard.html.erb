@@ -3,6 +3,7 @@
   <hr>
 </div>
 
+<span class="company-interest">
 <div class="col-md-8">
   <h4>Top Companies By Level of Interest</h4>
   <table class="table table-striped">
@@ -18,16 +19,18 @@
     <% end %>
   </table>
 </div>
+</span>
 
 <div class="col-md-12">
   <hr>
 </div>
 
+<span class="job-interest">
 <div class="col-md-8">
   <h4>Number of Jobs by Level of Interest</h4>
   <table class="table table-striped">
     <tr>
-      <th>level_of_interest</th>
+      <th>Level of Interest</th>
       <th>Number of Jobs</th>
     </tr>
     <% @count_jobs_by_interest.each do |interest, count| %>
@@ -38,11 +41,13 @@
     <% end %>
   </table>
 </div>
+</span>
 
 <div class="col-md-12">
   <hr>
 </div>
 
+<span class="job-location">
 <div class="col-md-8">
   <h4>Number of Jobs by location</h4>
   <table class="table table-striped">
@@ -58,3 +63,4 @@
     <% end %>
   </table>
 </div>
+</span>

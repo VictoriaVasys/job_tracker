@@ -17,7 +17,7 @@ class Job < ActiveRecord::Base
   end
 
   def self.jobs_by_level_of_interest
-    find_interests.map do |i|
+    find_interest.map do |i|
       where(level_of_interest: i)
     end
   end

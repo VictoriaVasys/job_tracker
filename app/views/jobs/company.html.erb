@@ -1,0 +1,19 @@
+<div class="page-header">
+  <h3>Jobs by Company</h3>
+  <hr>
+</div>
+
+<div class="col-md-8">
+  <table class="table table-striped">
+    <tr>
+      <th>Company</th>
+      <th>Job</th>
+    </tr>
+    <% @jobs_by_company.each do |job| %>
+    <tr>
+      <td><%=job.company.name%></td>
+      <td><%=link_to job.title, company_job_path(job.company.id, job) %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>

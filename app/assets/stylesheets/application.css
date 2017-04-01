@@ -42,3 +42,7 @@ h4 a{
 .comment{
   font-weight: lighter;
 }
+
+.nav.navbar-nav.navbar-right li .dropdown-menu a{
+  color: #3b4873;
+}

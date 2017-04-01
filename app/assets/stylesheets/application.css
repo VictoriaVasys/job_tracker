@@ -14,5 +14,31 @@
  *= require_self
  */
  .after-box{
-     float: left;
+    float: left;
  }
+
+ .navbar.navbar-inverse{
+   background-color: #3b4873;
+   color: #ffffff;
+   border: none;
+ }
+
+ .nav.navbar-nav.navbar-right li  a {
+    color: #fff;
+}
+
+.nav.navbar-nav.navbar-right li  a:hover {
+   color: #cacece;
+}
+
+h4 a{
+  color: #710627;
+}
+
+.page-header h3{
+  color: #7791e7;
+}
+
+.comment{
+  font-weight: lighter;
+}

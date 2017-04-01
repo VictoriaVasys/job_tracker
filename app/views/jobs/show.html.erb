@@ -1,5 +1,6 @@
 <div class='page-header'>
   <div class='btn-toolbar pull-right'>
+    <%= link_to "Return to jobs at #{@company.name}", company_jobs_path(@company, @jobs), class: "btn btn-default" %>
 
     <%= link_to "Edit", edit_company_job_path(@company, @job), class: "btn btn-default" %>
 
@@ -20,16 +21,11 @@
   </ul>
 </div>
 
-<span class="col-md-12">
-  <div class="btn btn-default" role="button" >
-    <%= link_to "Return to jobs at #{@company.name}", company_jobs_path(@company, @jobs), class: "btn-sm, btn-default" %>
-  </div>
-</span>
 
 <div class="col-md-12">
   <h4> Comments</h4>
   <% @comments.each do |comment| %>
-     <p class="comment"><%= comment.content %></p>
+     <p class="comment"> <%= comment.updated_at.month %>/<%= comment.updated_at.day %>: <%= comment.content %></p>
   <% end %>
 </div class="col-md-12">
 

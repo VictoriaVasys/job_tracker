@@ -32,5 +32,10 @@ describe Job do
       job = Job.new(title: "Software", level_of_interest: 70, description: "Wahooo")
       expect(job).to respond_to(:company)
     end
+
+    it "belongs to a category" do
+      job = Job.new(title: "Software", level_of_interest: 70, description: "Wahooo", category_id: 1)
+      expect(job).to respond_to(:category)
+    end
   end
 end

@@ -50,3 +50,54 @@ h4 a{
  p .tag{
   color: #d88400;
 }
+
+.col-md-8.company-interest{
+  margin-left: 20px;
+}
+
+.col-md-8.job-interest{
+  margin-left: 20px;
+}
+.col-md-8.job-location{
+  margin-left: 20px;
+}
+
+.col-md-8.jobs{
+  margin-left: 20px;
+}
+
+.col-md-8.location-table{
+  margin-left: 20px;
+}
+
+.col-md-8.company-table{
+  margin-left: 20px;
+}
+
+.col-md-12.tags{
+  margin-left: 20px;
+}
+
+.col-md-12.comments{
+  margin-left: 20px;
+}
+
+.col-md-12.comment-form{
+  margin-left: 20px;
+}
+
+.col-md-12.categories{
+  margin-left: 20px;
+}
+
+.col-md-12.companies{
+  margin-left: 20px;
+}
+
+.col-md-12.contacts{
+  margin-left: 20px;
+}
+
+.col-md-12.contacts-form{
+  margin-left: 20px;
+}

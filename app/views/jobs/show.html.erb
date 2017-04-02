@@ -21,13 +21,21 @@
   </ul>
 </div>
 
+<div class="col-md-12">
+  <h4>Tags</h4>
+  <% @tags.each do |tag| %>
+    <p style="color: #d88400;"> <%= tag.title %></p>
+  <% end %>
+  <%= link_to "add a new tag", edit_company_job_path(@company, @job) %>
+</div>
+
 
 <div class="col-md-12">
   <h4> Comments</h4>
   <% @comments.each do |comment| %>
      <p class="comment"> <%= comment.updated_at.month %>/<%= comment.updated_at.day %>: <%= comment.content %></p>
   <% end %>
-</div class="col-md-12">
+</div>
 
 <span class="col-md-12">
   <%= render partial: "comments/form" %>

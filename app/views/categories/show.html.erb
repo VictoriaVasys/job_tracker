@@ -1,19 +1,19 @@
 <div class='page-header'>
+  <div class="btn-toolbar pull-right">
+    <%= link_to "Return to all categories", categories_path, class: "btn btn-default" %>
+  </div>
   <h3><%= @category.title %></h3>
+  <hr>
 </div>
 
-<div class="list-group">
-  <ul class="col-md-8">
+<div class="col-md-12">
+  <ul>
     <% @category.jobs.each do |job| %>
-      <li class="list-group-item"><%= link_to "#{job.title} at #{job.company.name}", company_job_path(job.company, job) %></li>
-    <% end %>
+      <h4><%= link_to "#{job.title} at #{job.company.name}", company_job_path(job.company, job) %><h4>
+    <% end %><br><br>
   </ul>
 </div>
 
-<span class="col-md-12">
-  <div class="btn btn-default" role="button" >
-    <%= link_to "Return to all categories", categories_path, class: "btn-sm, btn-default" %>
-  </div>
-</span>
+
 
 

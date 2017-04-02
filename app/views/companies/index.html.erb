@@ -6,15 +6,15 @@
   <hr>
 </div>
 
+<div class="col-md-12 companies">
 <% @companies.each do |company| %>
-  <ul class=company_<%= company.id %>>
     <h4><%= link_to company.name, company_path(company) %></h4>
-    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-      <%= link_to "Edit", edit_company_path(company), class: "btn-sm, btn-default"%>
-      <%= link_to "Delete", company_path(company), method: "delete", class: "btn-sm btn-default" %>
+    <div class="btn-toolbar" role="toolbar">
+      <%= link_to "Edit", edit_company_path(company), class: "btn btn-default btn-xs"%>
+      <%= link_to "Delete", company_path(company), method: "delete", class: "btn btn-default btn-xs" %>
       <br><br>
     </div>
-  </ul>
 <% end %>
+</div>
 
 

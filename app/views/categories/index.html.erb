@@ -6,16 +6,15 @@
   <hr>
 </div>
 
-<ul>
+<div class="col-md-12 categories">
   <% @categories.each do |category| %>
     <h4><%= link_to category.title, category_path(category) %></h4>
-    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-      <%= link_to "Edit", edit_category_path(category), class: "btn-sm btn-default" %>
-      <%= link_to "Delete", category_path(category), method: :delete, class: "btn-sm btn-default" %>
+    <div class="btn-toolbar" role="toolbar">
+      <%= link_to "Edit", edit_category_path(category), class: "btn btn-default btn-xs" %>
+      <%= link_to "Delete", category_path(category), method: :delete, class: "btn btn-default btn-xs" %>
       <br><br><br>
   </div>
   <% end %>
-</ul>
-
+</div>
 
 

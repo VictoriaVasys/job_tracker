@@ -10,6 +10,7 @@
   <h2><%= @job.title %> at <%= @company.name %></h2>
 </div>
 
+<div class="col-md-12">
 <div class="list-group">
   <ul class="col-md-8">
     <li class="list-group-item"> Description: <strong> <%= @job.description %> </strong> </li>
@@ -20,23 +21,24 @@
     <% end %>
   </ul>
 </div>
+</div>
 
-<div class="col-md-12">
+<div class="col-md-12 tags">
   <h4>Tags</h4>
   <% @tags.each do |tag| %>
     <p style="color: #d88400;"> <%= tag.title %></p>
   <% end %>
-  <%= link_to "add a new tag", edit_company_job_path(@company, @job) %>
+  <%= link_to "add a new tag to this job", edit_company_job_path(@company, @job) %><br><br>
 </div>
 
 
-<div class="col-md-12">
+<div class="col-md-12 comments">
   <h4> Comments</h4>
   <% @comments.each do |comment| %>
-     <p class="comment"> <%= comment.updated_at.month %>/<%= comment.updated_at.day %>: <%= comment.content %></p>
+     <p class="comment"> <%= comment.updated_at.month %>/<%= comment.updated_at.day %>: <%= comment.content %></p> <br><br>
   <% end %>
 </div>
 
-<span class="col-md-12">
+<span class="col-md-12 comment-form">
   <%= render partial: "comments/form" %>
 </span>

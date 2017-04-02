@@ -18,16 +18,15 @@
 
 <hr>
 
-<div class="col-md-12">
+<div class="col-md-12 contacts">
   <h3>Contacts at <%= @company.name %></h3>
   <% @contacts.each do |contact| %>
   <p>  <%= contact.first_name %> <%= contact.last_name %>, <%= contact.position %> - <%= contact.email %></p>
-  <% end %>
+  <% end %><hr>
 </div>
 
-<hr>
 
 
-<div class="col-md-12">
+<div class="col-md-12 contacts-form">
   <%= render partial: "contacts/form" %>
 </div>

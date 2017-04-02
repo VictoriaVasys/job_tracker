@@ -1,0 +1,18 @@
+<div class="page-header">
+  <div class="btn-toolbar pull-right">
+    <%= link_to "Create a new tag", new_tag_path, class: "btn btn-default" %>
+  </div>
+  <h3>All Tags</h3>
+  <hr>
+</div>
+
+<ul>
+  <% @tags.each do |tag| %>
+  <div class="btn btn-default" role="button" >
+    <%=link_to tag.title, tag_path(tag) %>
+  </div>&nbsp;	&nbsp;
+  <%= link_to "Edit", edit_tag_path(tag) %> &nbsp;	&nbsp;	&nbsp;
+  <%= link_to "Delete", tag_path(tag), method: "delete" %><br><br>
+  <% end %>
+</ul>
+

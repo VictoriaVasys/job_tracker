@@ -3,7 +3,7 @@
   <%= f.text_field :title %><br><br>
 
   <%= f.label :description %>
-  <%= f.text_field :description %><br><br>
+  <%= f.text_area :description %><br><br>
 
   <%= f.label :level_of_interest %>
   <%= f.select :level_of_interest, options_for_select(1..10) %><br><br>
@@ -14,5 +14,14 @@
   <%= f.label :category_id %>
   <%= f.collection_select :category_id, Category.all, :id, :title, :required => true%>
   <%= link_to "or create a new category", new_category_path %><br><br>
+
+  <%= f.label :tags %>
+  <% Tag.all.each do |tag| %>
+    <div>
+      <%= check_box_tag :tag_ids, tag.id, @job.tags.include?(tag), :name => 'job[tag_ids][]', id: "tag-#{tag.id}" %>
+      <%= tag.title %>
+    </div>
+  <% end %>
+  <%= link_to "or create a new tag", new_tag_path %><br><br>
   <%= f.submit %>
 <% end %>

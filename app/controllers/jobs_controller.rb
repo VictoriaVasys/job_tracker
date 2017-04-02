@@ -28,6 +28,7 @@ class JobsController < ApplicationController
     @comments = @job.comments.reverse
     @comment = Comment.new
     @contacts = @company.contacts
+    @tags = @job.tags
   end
 
   def edit
@@ -82,6 +83,6 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :description, :level_of_interest, :city, :category_id)
+    params.require(:job).permit(:title, :description, :level_of_interest, :city, :category_id, tag_ids: [])
   end
 end

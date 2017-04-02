@@ -1,0 +1,13 @@
+<div class="page-header">
+  <div class="btn-toolbar pull-right">
+  </div>
+  <h3>Jobs tagged with "<%= @tag.title %>"</h3>
+  <hr>
+</div>
+
+
+<% @tag.jobs.each do |job| %>
+  <ul>
+    <%= link_to job.title, company_job_path(job.company, job) %>
+  </ul>
+<% end %>

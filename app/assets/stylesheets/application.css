@@ -46,3 +46,7 @@ h4 a{
 .nav.navbar-nav.navbar-right li .dropdown-menu a{
   color: #3b4873;
 }
+
+ p .tag{
+  color: #d88400;
+}

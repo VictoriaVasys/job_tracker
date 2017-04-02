@@ -7,6 +7,7 @@ root to: 'jobs#dashboard'
     end
   end
   resources :categories
+  resources :tags
   get 'jobs' => 'jobs#sort'
   get 'dashboard' => 'jobs#dashboard'
 end

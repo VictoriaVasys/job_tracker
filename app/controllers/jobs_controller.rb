@@ -68,10 +68,6 @@ class JobsController < ApplicationController
     end
   end
 
-  def location
-
-  end
-
   private
 
   def set_company

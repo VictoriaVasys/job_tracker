@@ -10,4 +10,5 @@ root to: 'jobs#dashboard'
   resources :tags
   get 'jobs' => 'jobs#sort'
   get 'dashboard' => 'jobs#dashboard'
+  get 'search' => 'jobs#search'
 end

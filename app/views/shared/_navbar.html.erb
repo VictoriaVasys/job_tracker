@@ -16,6 +16,12 @@
             <li><%= link_to "By Company", jobs_path(:sort => :company) %></li>
           </ul>
       </li>
+      <li class="search">
+        <%= form_tag(search_path, :method => "get", id: "search-form") do %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search Jobs" %>
+          <%= submit_tag "Search", :name => nil %>
+        <% end %>
+      </li>
     </ul>
   </div>
 </nav>

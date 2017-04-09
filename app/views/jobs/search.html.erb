@@ -1,0 +1,18 @@
+<div class="page-header">
+  <div class="btn-toolbar pull-right">
+  </div>
+  <h3> Search Results</h3>
+  <hr>
+</div>
+
+<% if @jobs.blank? %>
+  <h4>There are no jobs that match your search</h4>
+<% end %>
+
+<% @jobs.each do |job| %>
+  <ul>
+    <h5><%= link_to job.title, company_job_path(job.company, job)%> at <%= job.company.name %></h5>
+      <br><br>
+    </div>
+  </ul>
+<% end %>

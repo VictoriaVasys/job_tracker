@@ -51,4 +51,8 @@ class Job < ActiveRecord::Base
       where(company_id: company)
     end
   end
+
+  def self.search(search)
+    where("lower(title) LIKE ? OR lower(description) LIKE ?", "%#{search.downcase}%", "%#{search.downcase}%")
+  end
 end

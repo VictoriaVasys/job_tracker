@@ -68,6 +68,12 @@ class JobsController < ApplicationController
     end
   end
 
+  def search
+    if params[:search]
+      @jobs = Job.search(params[:search])
+    end
+  end
+
   private
 
   def set_company

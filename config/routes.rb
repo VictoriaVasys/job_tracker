@@ -11,4 +11,7 @@ root to: 'jobs#dashboard'
   get 'jobs' => 'jobs#sort'
   get 'dashboard' => 'jobs#dashboard'
   get 'search' => 'jobs#search'
+  delete '/logout', to: 'sessions#destroy'
+
+  get '/auth/:provider/callback', to: 'sessions#create'
 end

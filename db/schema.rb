@@ -64,19 +64,14 @@ ActiveRecord::Schema.define(version: 20170409214749) do
     t.integer  "company_id"
     t.string   "city"
     t.integer  "category_id"
-    t.integer  "job_tag_id"
   end
 
   add_index "jobs", ["category_id"], name: "index_jobs_on_category_id", using: :btree
   add_index "jobs", ["company_id"], name: "index_jobs_on_company_id", using: :btree
-  add_index "jobs", ["job_tag_id"], name: "index_jobs_on_job_tag_id", using: :btree
 
   create_table "tags", force: :cascade do |t|
-    t.string  "title"
-    t.integer "job_tag_id"
+    t.string "title"
   end
-
-  add_index "tags", ["job_tag_id"], name: "index_tags_on_job_tag_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string  "first_name"
@@ -90,6 +85,4 @@ ActiveRecord::Schema.define(version: 20170409214749) do
   add_foreign_key "job_tags", "tags"
   add_foreign_key "jobs", "categories"
   add_foreign_key "jobs", "companies"
-  add_foreign_key "jobs", "job_tags"
-  add_foreign_key "tags", "job_tags"
 end
